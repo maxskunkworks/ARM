@@ -13,14 +13,15 @@ The **Deploy MDT VM From Image** template provisions a single VM from an existin
 
 ## Usage
 
-Provide the following information:
++ Click the "Deploy to Azure" button to open the deployment UI in the Azure portal.
++ Provide the following information:
 
-+ Name of the VM (as it will appear in Azure). This does not have to be idential to the hostname of the VM.
-+ VM size
-+ The name of the storage account containing the source image. i.e. _mystorageaccount_
-+ The named path of the stored VM image, i.e. _vhds/image.vhd_
-+ The name of the existing virtual network to which VMs will be connected
-+ The name of the virtual network subnet, i.e. _Default_
+  + Name of the VM (as it will appear in Azure). This does not have to be idential to the hostname of the VM.
+  + VM size
+  + The name of the storage account containing the source image. i.e. _mystorageaccount_
+  + The named path of the stored VM image, i.e. _vhds/image.vhd_
+  + The name of the existing virtual network to which VMs will be connected
+  + The name of the virtual network subnet, i.e. _Default_
 
 ## Solution notes
 
