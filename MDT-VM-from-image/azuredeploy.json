@@ -40,7 +40,7 @@
                 "description": "The name of the network subnet."
             }
         },
-        "SASkey": {
+        "SasKey": {
             "type": "string",
             "metadata": {
                 "description": "If required, a valid SAS key for the source storage account, beginning with '?'."
@@ -101,7 +101,7 @@
                         "name": "osdisk",
                         "osType": "Windows",
                         "vhd": {
-                            "uri": "[concat('https://',parameters('storageAccount'),'.blob.core.windows.net/',parameters('imageName'),parameters('SASkey'))]"
+                            "uri": "[concat('https://',parameters('storageAccount'),'.blob.core.windows.net/',parameters('imageName'),parameters('SasKey'))]"
                         },
                         "caching": "ReadWrite",
                         "createOption": "Attach"
