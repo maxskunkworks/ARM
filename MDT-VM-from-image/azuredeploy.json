@@ -82,12 +82,6 @@
             "type": "Microsoft.Compute/virtualMachines",
             "name": "[parameters('vmName')]",
             "location": "[resourceGroup().location]",
-            "tags": {
-                "labRole": "[parameters('labRole')]",
-                "CreatedBy": "[parameters('CreatedBy')]",
-                "Requestor": "[parameters('Requestor')]",
-                "ExpiresOn": "[parameters('ExpiresOn')]"
-            },
             "dependsOn": [
                 "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
                 "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'))]"
