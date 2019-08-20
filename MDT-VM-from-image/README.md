@@ -22,6 +22,7 @@ The **Deploy MDT VM From Image** template provisions a single VM from an existin
   + The named path of the stored VM image, i.e. _vhds/image.vhd_
   + The name of the existing virtual network to which VMs will be connected
   + The name of the virtual network subnet, i.e. _Default_
+  + If the storage account containing the source image is secured, provide the SAS key
 
 ## Solution notes
 
