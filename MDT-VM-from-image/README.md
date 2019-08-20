@@ -13,7 +13,11 @@ The **Deploy MDT VM From Image** template provisions a single VM from an existin
 
 ## Usage
 
-+ Click the "Deploy to Azure" button to open the deployment UI in the Azure portal.
+You can deploy this template in one of two ways:
+
++ Click the "Deploy to Azure" button to open the deployment UI in the Azure portal
++ Execute the PowerShell script at https://raw.githubusercontent.com/maxskunkworks/arm/master/MDT-VM-from-image/scripts/Deploy-TLG.ps1 on your local computer.
+
 + Provide the following information:
 
   + Name of the VM (as it will appear in Azure). This does not have to be idential to the hostname of the VM.
