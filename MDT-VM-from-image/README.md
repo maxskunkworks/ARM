@@ -27,7 +27,7 @@ The **Deploy MDT VM From Image** template provisions a single VM from an existin
 ## Solution notes
 
 + Depends on an existing VNet/subnet and properly configured access to an image in an existing Azure storage account.
-+ Image must be stored as a **page blob**, and must be of **fixed** type.
++ The source image must be uploaded to the storage account as a **page blob**, and must be of **fixed** type.
 + Access to the VM depends on pre-existing user accounts in the image configuration.
 
 ## Deployed resources
