@@ -13,9 +13,9 @@
 #>
 
 # Provide parameter values
-$subscription = "subscription name"
-$resourceGroup = "resource group name"
-$location = "location, i.e. West US"
+$subscription = "" # subscription name
+$resourceGroup = "" # resource group name
+$location = "" # location, i.e. West US
 $vmName = "" # The name of the VM
 $vmSize = "" # The size of the VM, i.e. Standard_DS3_v2
 $storageAccount = "" # The name of the storage account containing the source image
