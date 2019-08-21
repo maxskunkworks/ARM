@@ -1,6 +1,8 @@
 ﻿<#  deploy-template.ps1
     Kelley Vice 8/20/2019
 
+    Source: https://github.com/maxskunkworks/ARM/tree/master/MDT-VM-from-image
+
     This script deploys the Deploy MDT VM From Image template to your Azure RM subscription.
     You must have the Az PowerShell module installed on your computer to run this script.
     To install the Az module, execute the following command from an elevated PowerShell prompt:
