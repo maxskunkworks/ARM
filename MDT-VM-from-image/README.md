@@ -26,6 +26,7 @@ You can deploy this template in one of two ways:
   + The name of the storage account containing the source image. i.e. _mystorageaccount_. Do not include the fully qualified URI.
   + The named path of the stored VM image, including the name of the blob folder and any sub-folders, and with no leading slash i.e. _vhds/image.vhd_
   + The name of the existing virtual network to which VMs will be connected, i.e. _MyVNET_
+  + The virtual network location (region). This should not be the location display name (_West US_), but the programmatic name (_westus_). You can learn how to get the list of available regions and their names at [Subscriptions - List Locations](https://docs.microsoft.com/en-us/rest/api/resources/Subscriptions/ListLocations).
   + The name of the virtual network subnet, i.e. _Default_
   + If the storage account containing the source image is secured, provide the SAS key. The key must be in the _SAS token_ format, including the leading _?_ character, and must have at minimum read access to the _Blob service_ and the _Container_ and _Object_ resource types. For more information, see [Grant limited access to Azure Storage resources using shared access signatures (SAS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview).
 
