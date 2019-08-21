@@ -15,19 +15,19 @@ The **Deploy MDT VM From Image** template provisions a single VM from an existin
 
 You can deploy this template in one of two ways:
 
-+ Click the "Deploy to Azure" button to open the deployment UI in the Azure portal
++ Click the **Deploy to Azure** button to open the deployment UI in the Azure portal
 + Execute the PowerShell script at https://raw.githubusercontent.com/maxskunkworks/arm/master/MDT-VM-from-image/scripts/deploy-template.ps1 on your local computer.
-  + To deploy using the PowerShell script, you must first install the Az module. See [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/en-us/powershell/azure/new-azureps-module-az) for more details.
+  + **Note:** To deploy using the PowerShell script, you must first install the Az module. See [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/en-us/powershell/azure/new-azureps-module-az) for more details.
 
 + Provide the following information:
 
   + Name of the VM (as it will appear in Azure). This does not have to be idential to the hostname of the VM.
-  + VM size
-  + The name of the storage account containing the source image. i.e. _mystorageaccount_
-  + The named path of the stored VM image, i.e. _vhds/image.vhd_
-  + The name of the existing virtual network to which VMs will be connected
+  + VM size. i.e. _Standard_DS3_v2_. For more information, see [Sizes for Windows virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes).
+  + The name of the storage account containing the source image. i.e. _mystorageaccount_. Do not include the fully qualified URI.
+  + The named path of the stored VM image, including the name of the blob folder and any sub-folders, and with no leading slash i.e. _vhds/image.vhd_
+  + The name of the existing virtual network to which VMs will be connected, i.e. _MyVNET_
   + The name of the virtual network subnet, i.e. _Default_
-  + If the storage account containing the source image is secured, provide the SAS key
+  + If the storage account containing the source image is secured, provide the SAS key. The key must be in the _SAS token_ format, including the leading _?_ character, and must have at minimum read access to the _Blob service_ and the _Container_ and _Object_ resource types. For more information, see [Grant limited access to Azure Storage resources using shared access signatures (SAS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview).
 
 ## Solution notes
 
@@ -37,17 +37,12 @@ You can deploy this template in one of two ways:
 
 ## Deployed resources
 
-+ VM
-+ Virtual network interface
++ VM resource with a new disk copied from the specified source image
++ Virtual network interface card (NIC) connected to the virtual network
 + Storage accounts for VM disks and diagnostics data
 
 ___
-Developed by the **MARVEL Skunkworks Lab**
-
-![alt text](../common/images/maxskunkworkslogo-small.jpg "MARVEL Skunkworks")
-
-Author: Kelley Vice (kvice@microsoft.com)  
-https://github.com/maxskunkworks
+Developed by the **MARVEL Skunkworks Lab** <br> ![alt text](../common/images/maxskunkworkslogo-small.jpg "MARVEL Skunkworks") <br> Author: Kelley Vice (kvice@microsoft.com) <br> https://github.com/maxskunkworks
 
 Last update: _8/20/2019_
 
