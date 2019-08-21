@@ -61,7 +61,7 @@
         "vnetPath": "[resourceId(variables('resourceGroupName'), 'Microsoft.Network/virtualNetworks', parameters('vnetName'))]",
         "subnetName": "[parameters('subnetName')]",
         "subnetRef": "[concat(variables('vnetPath'),'/subnets/', variables('subnetName'))]",
-        "ipName": "[concat(parameters('vmName'),'-ip')]",
+        "ipName": "[concat(parameters('vmName'),'-ip')]"
     },
     "resources": [
         {
