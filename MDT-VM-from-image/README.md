@@ -33,7 +33,10 @@ You can deploy this template in one of two ways:
 
 + Depends on an existing VNet/subnet and properly configured access to an image in an existing Azure storage account.
 + The source image must be uploaded to the storage account as a **page blob**, and must be of **fixed** type.
-+ Access to the VM depends on pre-existing user accounts in the image configuration.
++ The resource group you use for your deployment **must** be in the same location as the target virtual network or the deployment will fail.
++ The target virtual network should be the same on to which the MDT server is connected, or there should be a peering relationship between the target virtual network and the MDT server's virtual network.
++ For the sake of simplicity, the resource group and all resources within it should be in the same Azure location.
++ Access to the deployed VM depends on pre-existing user accounts in the image configuration. If you want to be able to access the VM using RDP (Remote Desktop Protocol), you must ensure that RDP is enabled in the source image.
 
 ## Deployed resources
 
