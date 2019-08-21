@@ -17,7 +17,8 @@ You can deploy this template in one of two ways:
 
 + Click the **Deploy to Azure** button to open the deployment UI in the Azure portal
 + Execute the PowerShell script at https://raw.githubusercontent.com/maxskunkworks/arm/master/MDT-VM-from-image/scripts/deploy-template.ps1 on your local computer.
-  + **Note:** To deploy using the PowerShell script, you must first install the Az module. See [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/en-us/powershell/azure/new-azureps-module-az) for more details.
+  > ![NOTE]
+  > To deploy using the PowerShell script, you must first install the Az module. See [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/en-us/powershell/azure/new-azureps-module-az) for more details.
 
 + Provide the following information:
 
