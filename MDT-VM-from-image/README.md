@@ -1,6 +1,6 @@
 ﻿# Deploy MDT VM From Image v1.0
 
-**Time to deploy**: ~10 minutes
+**Time to deploy**: ~5 minutes
 
 The **Deploy MDT VM From Image** template provisions a single VM from an existing WinPE image that you have uploaded to an Azure storage account.
 
@@ -48,8 +48,9 @@ You can deploy this template in one of two ways:
 ___
 Developed by the **MARVEL Skunkworks Lab** <br> ![alt text](../common/images/maxskunkworkslogo-small.jpg "MARVEL Skunkworks") <br> Author: Kelley Vice (kvice@microsoft.com) <br> https://github.com/maxskunkworks
 
-Last update: _8/20/2019_
+Last update: _8/21/2019_
 
 ## Changelog
 
-+ **8/20/2019**:  Initial commit.
++ **8/20/2019**: Initial commit.
++ **8/21/2019**: Added _vnetLocation_ parameter in the event that the target virtual network is in a different location than the resource group.
