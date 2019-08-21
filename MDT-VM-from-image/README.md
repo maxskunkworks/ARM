@@ -21,7 +21,7 @@ You can deploy this template in one of two ways:
 
 + Provide the following information:
 
-  + Name of the VM (as it will appear in Azure). This does not have to be idential to the hostname of the VM.
+  + Name of the VM (as it will appear in Azure). This does not have to be identical to the hostname of the VM.
   + VM size. i.e. _Standard_DS3_v2_. For more information, see [Sizes for Windows virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes).
   + The name of the storage account containing the source image. i.e. _mystorageaccount_. Do not include the fully qualified URI.
   + The named path of the stored VM image, including the name of the blob folder and any sub-folders, and with no leading slash i.e. _vhds/image.vhd_
