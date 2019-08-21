@@ -33,6 +33,12 @@
                 "description": "The name of the existing virtual network to which VMs will be connected."
             }
         },
+        "vnetLocation": {
+            "type": "string",
+            "metadata": {
+                "description": "The programmatic name of the of the virtual network's location, i.e. westus."
+            }
+        },
         "subnetName": {
             "type": "string",
             "defaultValue": "Default",
@@ -61,7 +67,7 @@
             "apiVersion": "2016-03-30",
             "type": "Microsoft.Network/networkInterfaces",
             "name": "[variables('nicName')]",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('vnetLocation')]",
             "dependsOn": [],
             "properties": {
                 "ipConfigurations": [
@@ -81,7 +87,7 @@
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Compute/virtualMachines",
             "name": "[parameters('vmName')]",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('vnetLocation')]",
             "dependsOn": [
                 "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
                 "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'))]"
@@ -122,7 +128,7 @@
             "type": "Microsoft.Storage/storageAccounts",
             "name": "[variables('storageAccountName')]",
             "apiVersion": "2016-01-01",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('vnetLocation')]",
             "sku": {
                 "name": "Premium_LRS",
                 "tier": "Premium"
@@ -135,7 +141,7 @@
             "type": "Microsoft.Storage/storageAccounts",
             "name": "[concat(variables('storageAccountName'), 'diagnostics')]",
             "apiVersion": "2016-01-01",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('vnetLocation')]",
             "sku": {
                 "name": "Standard_LRS"
             },
