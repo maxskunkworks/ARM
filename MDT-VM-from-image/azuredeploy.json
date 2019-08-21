@@ -60,13 +60,14 @@
         "resourceGroupName": "[resourceGroup().name]",
         "vnetPath": "[resourceId(variables('resourceGroupName'), 'Microsoft.Network/virtualNetworks', parameters('vnetName'))]",
         "subnetName": "[parameters('subnetName')]",
-        "subnetRef": "[concat(variables('vnetPath'),'/subnets/', variables('subnetName'))]"
+        "subnetRef": "[concat(variables('vnetPath'),'/subnets/', variables('subnetName'))]",
+        "ipName": "[concat(parameters('vmName'),'-ip')]",
     },
     "resources": [
         {
             "apiVersion": "2017-06-01",
             "type": "Microsoft.Network/publicIPAddresses",
-            "name": "[concat(parameters('vmName'),'-ip')]",
+            "name": "[variables('ipName')]",
             "location": "[parameters('vnetLocation')]",
             "properties": {
                 "publicIPAllocationMethod": "Dynamic",
@@ -91,7 +92,7 @@
                                 "id": "[variables('subnetRef')]"
                             },
                             "publicIPAddress": {
-                                "id": "[resourceId ('Microsoft.Network/publicIPAddresses/',parameters('vmName'),'-ip')]"
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses/',variables('ipName'))]"
                             }
                         }
                     }
