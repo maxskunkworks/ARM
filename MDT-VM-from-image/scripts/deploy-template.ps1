@@ -20,7 +20,8 @@ $vmName = "" # The name of the VM
 $vmSize = "" # The size of the VM, i.e. Standard_DS3_v2
 $storageAccount = "" # The name of the storage account containing the source image
 $imageName = "" # The named path of the stored image of the VM you're migrating in the vhds folder of the new storage account, i.e. vhds/image.vhd
-$vnetName = "" # The name of the existing virtual network to which VMs will be connected.
+$vnetName = "" # The name of the existing virtual network to which VMs will be connected
+$vnetLocation = "" # The programmatic name of the of the virtual network's location, i.e. westus
 $subnetName = "" # The name of the existing virtual network to which VMs will be connected
 $SasKey = "" # Select a VM size for all server VMs in your deployment.
 
@@ -35,6 +36,7 @@ $parameters.Add("vmSize",$vmSize)
 $parameters.Add("storageAccount",$storageAccount)
 $parameters.Add("imageName",$imageName)
 $parameters.Add("vnetName",$vnetName)
+$parameters.Add("vnetLocation",$vnetLocation)
 $parameters.Add("subnetName",$subnetName)
 $parameters.Add("SasKey",$SasKey)
 $parameters.Add("_artifactsLocation",$_artifactsLocation)
