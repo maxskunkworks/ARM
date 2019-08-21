@@ -53,4 +53,4 @@ Last update: _8/21/2019_
 ## Changelog
 
 + **8/20/2019**: Initial commit.
-+ **8/21/2019**: Added _vnetLocation_ parameter in the event that the target virtual network is in a different location than the resource group.
++ **8/21/2019**: Added _vnetLocation_ parameter in the event that the target virtual network is in a different location than the resource group, added public IP address resource.
