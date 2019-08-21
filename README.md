@@ -37,9 +37,4 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ___
-Developed by the **MARVEL Skunkworks Lab**
-
-![alt text](./common/images/maxskunkworkslogo-small.jpg "MARVEL Skunkworks")
-
-Kelley Vice (kvice@microsoft.com)
-https://github.com/maxskunkworks
+Developed by the **MARVEL Skunkworks Lab** <br> ![alt text](./common/images/maxskunkworkslogo-small.jpg "MARVEL Skunkworks") <br> Kelley Vice (kvice@microsoft.com) <br> https://github.com/maxskunkworks
