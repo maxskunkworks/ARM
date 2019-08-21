@@ -43,9 +43,6 @@ $parameters.Add("_artifactsLocation",$_artifactsLocation)
 Connect-AzAccount
 Get-AzSubscription -SubscriptionName $subscription | Set-AzContext
 
-# Deploy resource group
-New-AzResourceGroup -Name $resourceGroup -Location $location
-
 # Deploy template
 New-AzResourceGroupDeployment -Name $configName -ResourceGroupName $resourceGroup `
   -TemplateFile $templateUri -TemplateParameterObject $parameters -DeploymentDebugLogLevel All
