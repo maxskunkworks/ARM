@@ -46,5 +46,5 @@ Connect-AzAccount
 Get-AzSubscription -SubscriptionName $subscription | Set-AzContext
 
 # Deploy template
-New-AzResourceGroupDeployment -Name $configName -ResourceGroupName $resourceGroup `
+New-AzResourceGroupDeployment -Name $vmName -ResourceGroupName $resourceGroup `
   -TemplateFile $templateUri -TemplateParameterObject $parameters -DeploymentDebugLogLevel All
