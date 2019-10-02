@@ -16,6 +16,7 @@ param (
 	10/17/2018 Revised to run Office client installer using version from $OfficeVersion param, and remote PS to add new SH to RDS
 	10/24/2018 Added code to run Office installer using passed param $OfficeVersion, RDS config if $role is RDS
 	1/16/2019 Fixed issues with several sections, remmed out 'Enable RD firewall rules'
+	10/2/2019 Removed secrets per notification from DSRE
 #>
 
 ##### ELEVATE IN x64 #####
@@ -34,18 +35,6 @@ else {
 	}
 
 # Execute elevated code
-
-	# Add oualabadmins to local admins if joined to Redmond (not needed in OSSCPUB)
-	$domain = (Get-WmiObject Win32_ComputerSystem).Domain
-	if ($domain -eq "redmond.corp.microsoft.com") {
-		Write-Host
-		Write-Host "Adding " -NoNewline; Write-Host "redmond\oualabadmins " -f Cyan -NoNewline; Write-Host "to local admins..."
-		$group = [ADSI]"WinNT://./Administrators,group" 
-		$domain = "REDMOND"
-		$group0 = "oualabadmins"
-		$group.add("WinNT://$domain/$group0,Group")
-		Write-Host "Done." -f Green
-		}
 
 	# Disable UserAccessControl
 	Write-Host
@@ -114,8 +103,8 @@ if ($role -eq "RDS") {
 
 	# Add local computer to AD RDS computers group (Authenticates to AD as osscpub\oualabadmin)
 	Install-WindowsFeature RSAT-AD-PowerShell
-	$userName = "osscpub\oualabadmin"
-    $password = ConvertTo-SecureString "BorgFlatulentParlor!" -AsPlainText -force
+	$userName = ""
+    $password = ConvertTo-SecureString "" -AsPlainText -force
 	$user = New-Object Management.Automation.PSCredential("$UserName", $password)
     $hostname = $ENV:COMPUTERNAME
     Invoke-Command -ComputerName "ossua-dc1" -Credential $user -ScriptBlock `
